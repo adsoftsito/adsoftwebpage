@@ -49,9 +49,9 @@ export class HomeComponent implements OnInit {
       
     return this._data.getEntidades()
      .subscribe((data: any) => {
-      console.log("entidades :" + data );
-      this.goals = data;
-      //alert("entidades " + data);
+      console.log("entidades :" + data.response );
+      this.goals = (JSON.parse(data.response));
+      console.log("goals " + this.goals);
     }) 
 
   } 
@@ -64,8 +64,8 @@ export class HomeComponent implements OnInit {
     //this._data.changeGoal(this.goals);
     var mydata = new Entidades;
      
-    mydata.name = this.goalText;
-    mydata.description = this.goalText;
+    //mydata.name = this.goalText;
+    //mydata.description = this.goalText;
   
     return this._data.postEntidades(mydata)
      .subscribe((data: any) => {

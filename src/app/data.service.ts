@@ -14,7 +14,8 @@ import { _throw as throwError } from 'rxjs/observable/throw';
 export class DataService {
 
 // Define API
-apiURL = 'https://upheld-castle-251021.appspot.com';
+//apiURL = 'https://upheld-castle-251021.appspot.com';
+apiURL = 'http://35.224.84.87:8080/api';
 //apiURL = 'http://localhost:10010';
 //apiURL = 'https://admin-proyectos-2019.appspot.com';
 //apiURL = 'https://compact-booking-253415.appspot.com';
@@ -33,7 +34,7 @@ apiURL = 'https://upheld-castle-251021.appspot.com';
 
 
  getEntidades(): Observable<Entidades> {
-  return this.http.get<Entidades>(this.apiURL + '/gamesystems')
+  return this.http.get<Entidades>(this.apiURL + '/queryallcars')
   .pipe(
     retry(1),
     catchError(this.handleError)
