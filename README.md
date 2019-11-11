@@ -2,13 +2,13 @@
 
 ## 0.- install docker-ce
 
- 1. sudo yum update
- 2. sudo yum install -y yum-utils device-mapper-persistent-data lvm2
- 3. sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
- 4. sudo yum install -y docker-ce
- 5. sudo usermod -aG docker adsoft
- 6. sudo systemctl start docker
- 7. sudo docker run hello-world
+ 1. $ sudo yum update
+ 2. $ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+ 3. $ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+ 4. $ sudo yum install -y docker-ce
+ 5. $ sudo usermod -aG docker <user>
+ 6. $ sudo systemctl start docker
+ 7. $ sudo docker run hello-world
 
 ## 1.- install docker-compose
 
@@ -37,13 +37,14 @@
 7. $ cd hello
 8. $ vi hello.go
 
-- package main
-- import "fmt"
+```
+ package main
+ import "fmt"
 
-- func main() {
--   fmt.Printf("hello go world ! \n")
-- }
-
+ func main() {
+   fmt.Printf("hello go world ! \n")
+ }
+```
 
 9. $ go build
 10. $ ./hello
