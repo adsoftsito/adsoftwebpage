@@ -1,16 +1,16 @@
 # Hyperledger Fabric - install
 
-# 0.- install docker-ce
+## 0.- install docker-ce
 
-### 0.1.- sudo yum update
-### 0.2.- sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-### 0.3.- sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-### 0.4.- sudo yum install -y docker-ce
-### 0.5.- sudo usermod -aG docker adsoft
-### 0.6.- sudo systemctl start docker
-### 0.7.- sudo docker run hello-world
+ 1. sudo yum update
+ 2. sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+ 3. sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+ 4. sudo yum install -y docker-ce
+ 5. sudo usermod -aG docker adsoft
+ 6. sudo systemctl start docker
+ 7. sudo docker run hello-world
 
-# 1.- install docker-compose
+## 1.- install docker-compose
 
 1.1.-  sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
