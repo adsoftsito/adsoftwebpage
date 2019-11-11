@@ -12,77 +12,76 @@
 
 ## 1.- install docker-compose
 
-1.1.-  sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+1.  sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
-1.2.- sudo chmod +x /usr/local/bin/docker-compose
-1.3.- docker-compose --version
+2. sudo chmod +x /usr/local/bin/docker-compose
+3. docker-compose --version
 
 
-# 2.- install go
-$ sudo yum install wget
-$ wget https://dl.google.com/go/go1.12.9.linux-amd64.tar.gz
-$ sudo tar -C /usr/local/ -xvf go1.12.9.linux-amd64.tar.gz
-$ vi .bash_profile
+## 2.- install go
+1. $ sudo yum install wget
+2. $ wget https://dl.google.com/go/go1.12.9.linux-amd64.tar.gz
+3. $ sudo tar -C /usr/local/ -xvf go1.12.9.linux-amd64.tar.gz
+4. $ vi .bash_profile
    
-   PATH=$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/go/bin
-$ exit
+   - PATH=$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/go/bin
+5. $ exit
 
-# hello world - go
-$ cd ~
-$ mkdir go
-$ cd go
-$ mkdir src
-$ cd src
-$ mkdir hello
-$ cd hello
+## hello world - go
+1. $ cd ~
+2. $ mkdir go
+3. $ cd go
+4. $ mkdir src
+5. $ cd src
+6. $ mkdir hello
+7. $ cd hello
+8. $ vi hello.go
 
-$ vi hello.go
+- package main
+- import "fmt"
 
-package main
-import "fmt"
-
-func main() {
-  fmt.Printf("hello go world ! \n")
-}
-
-
-$ go build
-$ ./hello
+- func main() {
+-   fmt.Printf("hello go world ! \n")
+- }
 
 
-# 3.- install  node 10.x
-
-$ curl -sL https://rpm.nodesource.com/setup_10.x | sudo -E bash -
-$ sudo yum install nodejs
+9. $ go build
+10. $ ./hello
 
 
-# 4.- install python 2.7, gcc, g++, make
+## 3.- install  node 10.x
 
-$ sudo yum rm -fr /var/cache/yum/* 
-$ sudo yum install gcc-g++
-$ sudo yum group install "Development Tools"
+1. $ curl -sL https://rpm.nodesource.com/setup_10.x | sudo -E bash -
+2. $ sudo yum install nodejs
 
-# 5.- install fabric samples
 
-$ sudo yum install git
-$ git clone https://github.com/hyperledger/fabric-samples.git
-$ cd fabric-samples/
-$ curl -sSL http://bit.ly/2ysbOFE | bash -s
+## 4.- install python 2.7, gcc, g++, make
 
-$ vi .bash_profile
+1. $ sudo yum rm -fr /var/cache/yum/* 
+2. $ sudo yum install gcc-g++
+3. $ sudo yum group install "Development Tools"
+
+## 5.- install fabric samples
+
+1. $ sudo yum install git
+2. $ git clone https://github.com/hyperledger/fabric-samples.git
+3. $ cd fabric-samples/
+4. $ curl -sSL http://bit.ly/2ysbOFE | bash -s
+5. $ vi .bash_profile
    
-   PATH=$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/go/bin:/home/adsoft_research/fabric-samples/bin
-$ exit
+-  PATH=$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/go/bin:/home/adsoft_research/fabric-samples/bin
 
-# run hyperledger first network
+6. $ exit
 
-$ cd fabric-samples/first-network
+## run hyperledger first network
 
-$ ./byfn.sh generate
-$ ./byfn.sh up
-$ ./byfn.sh down
+1. $ cd fabric-samples/first-network
+
+2. $ ./byfn.sh generate
+3. $ ./byfn.sh up
+4. $ ./byfn.sh down
 
 
 ## build, configure, run fab car
 
-https://medium.com/@kctheservant/deep-dive-into-fabcar-part-1-57c2530148a0
+- https://medium.com/@kctheservant/deep-dive-into-fabcar-part-1-57c2530148a0
