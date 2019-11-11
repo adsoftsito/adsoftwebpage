@@ -1,28 +1,90 @@
 # Ng5
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.4.
+https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html
 
-## Development server
+# 0.- install docker-ce
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+0.1.- sudo yum update
+0.2.- sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+0.3.- sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+0.4.- sudo yum install -y docker-ce
+0.5.- sudo usermod -aG docker adsoft
+0.6.- sudo systemctl start docker
+0.7.- sudo docker run hello-world
 
-## Code scaffolding
+# 1.- install docker-compose
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+1.1.-  sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
-## Build
+1.2.- sudo chmod +x /usr/local/bin/docker-compose
+1.3.- docker-compose --version
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+# 2.- install go
+$ sudo yum install wget
+$ wget https://dl.google.com/go/go1.12.9.linux-amd64.tar.gz
+$ sudo tar -C /usr/local/ -xvf go1.12.9.linux-amd64.tar.gz
+$ vi .bash_profile
+   
+   PATH=$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/go/bin
+$ exit
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# hello world - go
+$ cd ~
+$ mkdir go
+$ cd go
+$ mkdir src
+$ cd src
+$ mkdir hello
+$ cd hello
 
-## Running end-to-end tests
+$ vi hello.go
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+package main
+import "fmt"
 
-## Further help
+func main() {
+  fmt.Printf("hello go world ! \n")
+}
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+$ go build
+$ ./hello
+
+
+# 3.- install  node 10.x
+
+$ curl -sL https://rpm.nodesource.com/setup_10.x | sudo -E bash -
+$ sudo yum install nodejs
+
+
+# 4.- install python 2.7, gcc, g++, make
+
+$ sudo yum rm -fr /var/cache/yum/* 
+$ sudo yum install gcc-g++
+$ sudo yum group install "Development Tools"
+
+# 5.- install fabric samples
+
+$ sudo yum install git
+$ git clone https://github.com/hyperledger/fabric-samples.git
+$ cd fabric-samples/
+$ curl -sSL http://bit.ly/2ysbOFE | bash -s
+
+$ vi .bash_profile
+   
+   PATH=$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/go/bin:/home/adsoft_research/fabric-samples/bin
+$ exit
+
+# run hyperledger first network
+
+$ cd fabric-samples/first-network
+
+$ ./byfn.sh generate
+$ ./byfn.sh up
+$ ./byfn.sh down
+
+
+## build, configure, run fab car
+
+https://medium.com/@kctheservant/deep-dive-into-fabcar-part-1-57c2530148a0

@@ -15,7 +15,9 @@ export class DataService {
 
 // Define API
 //apiURL = 'https://upheld-castle-251021.appspot.com';
-apiURL = 'http://35.224.84.87:8080/api';
+apiURL = 'http://35.223.168.136:8080/api';
+//http://35.223.168.136:8080/api/queryallcars
+
 //apiURL = 'http://localhost:10010';
 //apiURL = 'https://admin-proyectos-2019.appspot.com';
 //apiURL = 'https://compact-booking-253415.appspot.com';
@@ -34,7 +36,7 @@ apiURL = 'http://35.224.84.87:8080/api';
 
 
  getEntidades(): Observable<Entidades> {
-  return this.http.get<Entidades>(this.apiURL + '/queryallcars')
+  return this.http.get<Entidades>(this.apiURL + '/queryallcars', this.httpOptions)
   .pipe(
     retry(1),
     catchError(this.handleError)
