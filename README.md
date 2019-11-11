@@ -1,16 +1,14 @@
-# Ng5
-
-https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html
+# Hyperledger Fabric - install
 
 # 0.- install docker-ce
 
-0.1.- sudo yum update
-0.2.- sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-0.3.- sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-0.4.- sudo yum install -y docker-ce
-0.5.- sudo usermod -aG docker adsoft
-0.6.- sudo systemctl start docker
-0.7.- sudo docker run hello-world
+### 0.1.- sudo yum update
+### 0.2.- sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+### 0.3.- sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+### 0.4.- sudo yum install -y docker-ce
+### 0.5.- sudo usermod -aG docker adsoft
+### 0.6.- sudo systemctl start docker
+### 0.7.- sudo docker run hello-world
 
 # 1.- install docker-compose
 
